@@ -1,0 +1,6 @@
+@DesafioPF_HostAddress = http://localhost:5205
+
+GET {{DesafioPF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

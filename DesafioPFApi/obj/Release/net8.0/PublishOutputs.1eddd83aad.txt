@@ -1,0 +1,13 @@
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\DesafioPF.exe
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\appsettings.Development.json
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\appsettings.json
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\simulated_snmp.json
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\DesafioPF.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\DesafioPF.deps.json
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\DesafioPF.runtimeconfig.json
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\DesafioPF.pdb
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\Microsoft.OpenApi.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\Newtonsoft.Json.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\Swashbuckle.AspNetCore.Swagger.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

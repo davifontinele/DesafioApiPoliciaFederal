@@ -1,0 +1,62 @@
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: netbox
+      POSTGRES_USER: netbox
+      POSTGRES_PASSWORD: netbox
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:alpine
+
+  netbox:
+    image: netboxcommunity/netbox:latest
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      SUPERUSER_EMAIL: admin@example.com
+      SUPERUSER_PASSWORD: admin
+      DB_NAME: netbox
+      DB_USER: netbox
+      DB_PASSWORD: netbox
+      DB_HOST: postgres
+      REDIS_HOST: redis
+    ports:
+      - "8000:8080"
+    volumes:
+      - netbox_media:/opt/netbox/netbox/media
+      - netbox_reports:/opt/netbox/netbox/reports
+      - netbox_scripts:/opt/netbox/netbox/scripts
+
+  netbox-worker:
+    image: netboxcommunity/netbox:latest
+    depends_on:
+      - netbox
+    command: /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker
+
+  netbox-housekeeping:
+    image: netboxcommunity/netbox:latest
+    depends_on:
+      - netbox
+    command: /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py housekeeping
+
+  your-api:
+    build: ./DesafioPF
+    ports:
+      - "5000:80"
+    depends_on:
+      - netbox
+    volumes:
+      - ./DesafioPF:/app
+    environment:
+      NETBOX_API_URL: http://netbox:8080/api
+      NETBOX_API_TOKEN: 29b8aea893ad2468a10ba7fe9247774a7842b93b
+
+volumes:
+  postgres_data:
+  netbox_media:
+  netbox_reports:
+  netbox_scripts:
