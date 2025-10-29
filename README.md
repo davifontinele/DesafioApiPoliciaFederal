@@ -10,6 +10,7 @@ Este projeto é uma API REST desenvolvida para simular o processo de documentaç
   <ul>
     <li>Caso exista, cria ou atualiza os dispositivos, interfaces e IPs</li>
   </ul>
+  <li>Faz buscas com base no nome dos dispositivos</li>
 </ul>
 
 # Como configurar o ambiente ⚙️
@@ -54,6 +55,7 @@ Este projeto é uma API REST desenvolvida para simular o processo de documentaç
 Envia uma lista de IPs para descoberta e registro.
 
 ## Exemplo com curl:
+```bash
 curl -X 'POST' \
   'http://localhost:5000/api/v1/Dispositivo' \
   -H 'accept: */*' \
@@ -62,13 +64,88 @@ curl -X 'POST' \
   "192.168.1.1",
   "10.0.0.1"
 ]'
+```
+<br>
 
 ## 📌 Endpoint: GET /GetByName
 
-Retorna o dispositivo especificado
+Retorna o dispositivo especificado.
 
 ## Exemplo com curl:
+```bash
 curl -X 'GET' \
   'http://localhost:5000/api/v1/Dispositivo?Name=core-router-sp-01' \
   -H 'accept: */*'
+```
+<br>
 
+## 📌 Endpoint: GET /GetByListName
+
+Retorna uma lista de dispositivos especificados.
+
+## Exemplo com curl:
+```bash
+curl -X 'GET' \
+  'https://localhost:7130/api/v1/Dispositivo/GetByListName?Name=core-router-sp-01&Name=access-switch-floor3-01&Name=dist-switch-dc-01' \
+  -H 'accept: */*'
+```
+<br>
+
+## 📌 Endpoint: GET /GetAllDevices
+
+Retorna uma lista de todos os dispositivos.
+
+## Exemplo com curl:
+```bash
+curl -X 'GET' \
+  'https://localhost:7130/api/v1/Dispositivo/GetAllDevices' \
+  -H 'accept: */*'
+```
+<br>
+
+## 📌 Endpoint: GET /GetAllInterfaceDevice
+
+Retorna uma lista de todas as interfaces de um dispositivo especificado.
+
+## Exemplo com curl:
+```bash
+curl -X 'GET' \
+  'https://localhost:7130/api/v1/Dispositivo/GetAllInterfaceDevice?name=dist-switch-dc-01' \
+  -H 'accept: */*'
+```
+<br>
+
+## 📌 Endpoint: GET /GetInterfaceDevice
+
+Retorna uma interface especifica de um dispositivo.
+
+## Exemplo com curl:
+```bash
+curl -X 'GET' \
+  'https://localhost:7130/api/v1/Dispositivo/GetInterfaceDevice?name=dist-switch-dc-01&interfaceIndex=2' \
+  -H 'accept: */*'
+```
+<br>
+
+## 📌 Endpoint: GET /GetAllLocations
+
+Retorna uma lista de todas as localizações.
+
+## Exemplo com curl:
+```bash
+curl -X 'GET' \
+  'https://localhost:7130/api/v1/Dispositivo/GetAllLocations' \
+  -H 'accept: */*'
+```
+<br>
+
+## 📌 Endpoint: GET /GetDeviceLocation
+
+Retorna a localização de um dispositivo.
+
+## Exemplo com curl:
+```bash
+curl -X 'GET' \
+  'https://localhost:7130/api/v1/Dispositivo/GetDeviceLocation?name=dist-switch-dc-01' \
+  -H 'accept: */*'
+```
