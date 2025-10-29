@@ -53,7 +53,7 @@ services:
       - ./DesafioPF:/app
     environment:
       NETBOX_API_URL: http://netbox:8080/api
-      NETBOX_API_TOKEN: 29b8aea893ad2468a10ba7fe9247774a7842b93b
+      NETBOX_API_TOKEN: seu_token
 
 volumes:
   postgres_data:
