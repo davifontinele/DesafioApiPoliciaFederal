@@ -57,6 +57,7 @@ D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.AssemblyInfo.cs
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.csproj.CoreCompileInputs.cache
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.MvcApplicationPartsAssemblyInfo.cs
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.MvcApplicationPartsAssemblyInfo.cache
+D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.sourcelink.json
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -71,3 +72,4 @@ D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\refint\DesafioPF.dll
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.pdb
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\DesafioPF.genruntimeconfig.cache
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\ref\DesafioPF.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

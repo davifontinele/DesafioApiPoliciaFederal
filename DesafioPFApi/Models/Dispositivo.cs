@@ -25,5 +25,24 @@ namespace DesafioPF.Models
 
         [JsonPropertyName("interfaces")]
         public List<InterfaceInfo> Interfaces { get; set; }
+
+        public override string ToString()
+        {
+            return $"Nome: {SysName}\n" +
+                    $"Descrição: {SysDescr}.\n" +
+                    $"Id: {SysObjectID}\n" +
+                    $"Tempo Ativo: {SysUpTime}\n" +
+                    $"Contato: {SysContact}\n" +
+                    $"Localização: {SysLocation}\n" +
+                    $"{string.Join("\n", Interfaces.Select(i => $"\nInterface {i.IfIndex}:\n" +
+                    $"Descrição: {i.IfDescr}\n" +
+                    $"Tipo: {i.IfType}\n" +
+                    $"Velocidade: {i.IfSpeed}\n" +
+                    $"PhysAddress: {i.IfPhysAddress}\n" +
+                    $"Status Admin: {i.IfAdminStatus}\n" +
+                    $"OperStatus: {i.IfOperStatus}\n" +
+                    $"IpAddress: {i.IpAddress}\n" +
+                    $"Netmask: {i.IpNetmask}"))}";
+        }
     }
 }

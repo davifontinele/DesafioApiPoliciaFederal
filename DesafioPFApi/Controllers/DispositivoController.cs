@@ -1,6 +1,6 @@
+using DesafioPF.Models;
 using DesafioPF.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace DesafioPF.Controllers
 {
@@ -35,7 +35,7 @@ namespace DesafioPF.Controllers
                 }
 
                 var ipEncontrado = dispositivos.Interfaces.FirstOrDefault(i => i.IpAddress != null && i.IpAddress.Equals(ip));
-                
+
                 if (ipEncontrado != null)
                 {
                     if (await NetboxService.DispositivoExiste(dispositivos.SysName))
@@ -53,8 +53,117 @@ namespace DesafioPF.Controllers
             return Ok("Processamento concluído.");
         }
 
-        [HttpGet]
-        public IActionResult ObterPorNome(string Name)
+        [HttpGet("GetByName")]
+        public IActionResult GetByName(string Name)
+        {
+            var todosDispositivos = SnmpSimulatorService.GetAllDevices();
+
+            if (todosDispositivos == null)
+            {
+                return NotFound("Base de dados não encontrada.");
+            }
+            else
+            {
+                var dispositivo = todosDispositivos.FirstOrDefault(d => d.Value.SysName == Name);
+                if (dispositivo.Value != null)
+                {
+                    return Ok(dispositivo.ToString());
+                }
+                return NotFound("Dispositivo não encontrado.");
+            }
+        }
+
+        [HttpGet("GetByListName")]
+        public IActionResult GetListByName([FromQuery] List<string> Name)
+        {
+            var todosDispositivos = SnmpSimulatorService.GetAllDevices();
+
+            if (todosDispositivos == null)
+            {
+                return NotFound("Base de dados não encontrada.");
+            }
+            else
+            {
+                List<Dispositivo> encontrados = new List<Dispositivo>();
+                foreach (var device in todosDispositivos)
+                {
+                    foreach (var nome in Name)
+                    {
+                        if (device.Value.SysName == nome)
+                        {
+                            encontrados.Add(device.Value);
+                        }
+                    }
+                }
+                return Ok(encontrados);
+            }
+        }
+
+        [HttpGet("GetAllDevices")]
+        public IActionResult GetAll()
+        {
+            var todosDispositivos = SnmpSimulatorService.GetAllDevices();
+            if (todosDispositivos == null)
+            {
+                return NotFound("Base de dados não encontrada.");
+            }
+            else
+            {
+                return Ok(todosDispositivos);
+            }
+        }
+
+        [HttpGet("GetAllInterfaceDevice")]
+        public IActionResult GetAllInterfaceDevice(string name)
+        {
+            var todosDispositivos = SnmpSimulatorService.GetAllDevices();
+
+            if (todosDispositivos == null)
+            {
+                return NotFound("Base de dados não encontrada.");
+            }
+            else
+            {
+                var dispositivo = todosDispositivos.FirstOrDefault(d => d.Value.SysName == name);
+                if (dispositivo.Value != null)
+                {
+                    return Ok(dispositivo.Value.Interfaces);
+                }
+                return NotFound("Dispositivo não encontrado.");
+            }
+        }
+
+        [HttpGet("GetInterfaceDevice")]
+        public IActionResult GetInterfaceDevice(string name, int interfaceIndex)
+        {
+            var todosDispositivos = SnmpSimulatorService.GetAllDevices();
+
+            if (todosDispositivos == null)
+            {
+                return NotFound("Base de dados não encontrada.");
+            }
+            else
+            {
+                foreach (var dispositivo in todosDispositivos)
+                {
+                    if (dispositivo.Value.SysName == name)
+                    {
+                        if (dispositivo.Value.Interfaces.Count < interfaceIndex)
+                        {
+                            return NotFound("Interface não encontrada.");
+                        }
+                        else
+                        {
+                            return Ok(dispositivo.Value.Interfaces.FirstOrDefault(i => i.IfIndex == interfaceIndex));
+                        } 
+                    }
+                }
+                return NotFound("Dispositivo ou interface não encontrado.");
+            }
+        }
+
+        [HttpGet("GetAllLocations")]
+        public IActionResult GetAllLocations()
         {
             var todosDispositivos = SnmpSimulatorService.GetAllDevices();
 
@@ -63,29 +172,30 @@ namespace DesafioPF.Controllers
                 return NotFound("Base de dados não encontrada.");
             }
 
-            var dispositivo = todosDispositivos.FirstOrDefault(d => d.Value.SysName == Name);
+            var locations = todosDispositivos.Values.Select(d => d.SysLocation);
 
-            if (dispositivo.Value == null)
+            return Ok(locations);
+        }
+
+        [HttpGet("GetDeviceLocation")]
+        public IActionResult GetDeviceLocation(string name)
+        {
+            var todosDispositivos = SnmpSimulatorService.GetAllDevices();
+
+            if (todosDispositivos == null)
             {
-                return NotFound("Dispositivo não encontrado.");
+                return NotFound("Base de dados não encontrada.");
             }
             else
             {
-                return Ok($"Nome: {dispositivo.Value.SysName}\n" +
-                    $"Descrição: {dispositivo.Value.SysDescr}.\n" +
-                    $"Id: {dispositivo.Value.SysObjectID}\n" +
-                    $"Tempo Ativo: {dispositivo.Value.SysUpTime}\n" +
-                    $"Contato: {dispositivo.Value.SysContact}\n" +
-                    $"Localização: {dispositivo.Value.SysLocation}\n" +
-                    $"{string.Join("\n",dispositivo.Value.Interfaces.Select(i => $"\nInterface {i.IfIndex}:\n" +
-                    $"Descrição: {i.IfDescr}\n" +
-                    $"Tipo: {i.IfType}\n" +
-                    $"Velocidade: {i.IfSpeed}\n" +
-                    $"PhysAddress: {i.IfPhysAddress}\n" +
-                    $"Status Admin: {i.IfAdminStatus}\n" +
-                    $"OperStatus: {i.IfOperStatus}\n" +
-                    $"IpAddress: {i.IpAddress}\n" +
-                    $"Netmask: {i.IpNetmask}"))}");
+                foreach (var dispositivo in todosDispositivos)
+                {
+                    if (dispositivo.Value.SysName == name)
+                    {
+                        return Ok(dispositivo.Value.SysLocation);
+                    }
+                }
+                return NotFound("Dispositivo não encontrado.");
             }
         }
     }

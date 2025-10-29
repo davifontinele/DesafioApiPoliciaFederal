@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BECDB591-415F-4676-A0EF-DBFF17498F85}|DesafioPF.csproj|d:\\exercicios\\desafiopf\\desafiopfapi\\controllers\\dispositivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BECDB591-415F-4676-A0EF-DBFF17498F85}|DesafioPF.csproj|solutionrelative:controllers\\dispositivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BECDB591-415F-4676-A0EF-DBFF17498F85}|DesafioPF.csproj|d:\\exercicios\\desafiopf\\desafiopfapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BECDB591-415F-4676-A0EF-DBFF17498F85}|DesafioPF.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BECDB591-415F-4676-A0EF-DBFF17498F85}|DesafioPF.csproj|d:\\exercicios\\desafiopf\\desafiopfapi\\models\\dispositivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BECDB591-415F-4676-A0EF-DBFF17498F85}|DesafioPF.csproj|solutionrelative:models\\dispositivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dispositivo.cs",
+              "DocumentMoniker": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\Models\\Dispositivo.cs",
+              "RelativeDocumentMoniker": "Models\\Dispositivo.cs",
+              "ToolTip": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\Models\\Dispositivo.cs",
+              "RelativeToolTip": "Models\\Dispositivo.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwCUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T00:30:58.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T23:32:25.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DispositivoController.cs",
+              "DocumentMoniker": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\Controllers\\DispositivoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DispositivoController.cs",
+              "ToolTip": "D:\\Exercicios\\DesafioPF\\DesafioPFApi\\Controllers\\DispositivoController.cs",
+              "RelativeToolTip": "Controllers\\DispositivoController.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAQwKIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T23:31:56.208Z",
+              "EditorCaption": ""
             }
           ]
         }

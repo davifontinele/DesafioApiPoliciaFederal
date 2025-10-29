@@ -17,8 +17,60 @@
   },
   {
     "ContainingType": "DesafioPF.Controllers.DispositivoController",
-    "Method": "ObterPorNome",
-    "RelativePath": "api/v1/Dispositivo",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Dispositivo/GetAllDevices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesafioPF.Controllers.DispositivoController",
+    "Method": "GetAllInterfaceDevice",
+    "RelativePath": "api/v1/Dispositivo/GetAllInterfaceDevice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesafioPF.Controllers.DispositivoController",
+    "Method": "GetAllLocations",
+    "RelativePath": "api/v1/Dispositivo/GetAllLocations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesafioPF.Controllers.DispositivoController",
+    "Method": "GetListByName",
+    "RelativePath": "api/v1/Dispositivo/GetByListName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesafioPF.Controllers.DispositivoController",
+    "Method": "GetByName",
+    "RelativePath": "api/v1/Dispositivo/GetByName",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -26,6 +78,43 @@
       {
         "Name": "Name",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesafioPF.Controllers.DispositivoController",
+    "Method": "GetDeviceLocation",
+    "RelativePath": "api/v1/Dispositivo/GetDeviceLocation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesafioPF.Controllers.DispositivoController",
+    "Method": "GetInterfaceDevice",
+    "RelativePath": "api/v1/Dispositivo/GetInterfaceDevice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "interfaceIndex",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

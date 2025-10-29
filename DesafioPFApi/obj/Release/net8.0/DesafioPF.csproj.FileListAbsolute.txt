@@ -34,3 +34,4 @@ D:\Exercicios\DesafioPF\DesafioPFApi\obj\Release\net8.0\refint\DesafioPF.dll
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Release\net8.0\DesafioPF.pdb
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Release\net8.0\DesafioPF.genruntimeconfig.cache
 D:\Exercicios\DesafioPF\DesafioPFApi\obj\Release\net8.0\ref\DesafioPF.dll
+D:\Exercicios\DesafioPF\DesafioPFApi\obj\Release\net8.0\DesafioPF.sourcelink.json
